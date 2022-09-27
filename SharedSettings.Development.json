@@ -9,9 +9,6 @@
   "Jwt": {
     "Key": "ThisismySecretKey",
     "Issuer": "Test.com"
-  },
-  "Test": {
-    "key1": "this is key1"
   }
 
 }

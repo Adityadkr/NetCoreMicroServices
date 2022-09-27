@@ -30,7 +30,6 @@ namespace Api.Users.Controllers
         [Route("login")]
         public IActionResult Login(User user)
         {
-            var key1 = _configuration.GetValue<string>("Test:Key1");
             if (user.FirstName == "NODE")
             {
                 var claims = new[] {
