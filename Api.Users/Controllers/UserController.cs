@@ -1,6 +1,7 @@
 ﻿using Api.Users.Models;
 using CommonEntities.Services.IRepository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -18,15 +19,18 @@ namespace Api.Users.Controllers
     {
         // GET: api/<UserController>
         private IJwtService _jwtService;
-        public UserController(IJwtService jwtService)
+        private IConfiguration _configuration;
+        public UserController(IJwtService jwtService, IConfiguration configuration)
         {
             _jwtService = jwtService;
+            _configuration = configuration;
         }
 
         [HttpPost]
         [Route("login")]
         public IActionResult Login(User user)
         {
+            var key1 = _configuration.GetValue<string>("Test:Key1");
             if (user.FirstName == "NODE")
             {
                 var claims = new[] {

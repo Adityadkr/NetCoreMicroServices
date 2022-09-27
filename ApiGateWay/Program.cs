@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +22,12 @@ namespace ApiGateWay
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.ConfigureAppConfiguration(x => x.AddJsonFile("ocelot.json"));    
+                    webBuilder.ConfigureAppConfiguration(x => x.AddJsonFile("ocelot.json"));
+                })
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+
+                    config.AddJsonFile(Path.GetFullPath(Path.Combine(@"../" + "SharedSettings." + hostingContext.HostingEnvironment.EnvironmentName + ".json")));
                 });
     }
 }

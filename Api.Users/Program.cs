@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,6 +22,11 @@ namespace Api.Users
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                })
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+
+                    config.AddJsonFile(Path.GetFullPath(Path.Combine(@"../" + "SharedSettings." + hostingContext.HostingEnvironment.EnvironmentName + ".json")));
                 });
     }
 }

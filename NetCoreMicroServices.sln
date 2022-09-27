@@ -17,6 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateWay", "ApiGateWay\Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonEntities", "CommonEntities\CommonEntities.csproj", "{F45D52DB-0C9E-44D6-A096-A1901E7F6D64}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{94965E02-3E61-4C29-AF87-F8687B10566C}"
+	ProjectSection(SolutionItems) = preProject
+		SharedSettings.Development.json = SharedSettings.Development.json
+		SharedSettings.json = SharedSettings.json
+		SharedSettings.Production.json = SharedSettings.Production.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
