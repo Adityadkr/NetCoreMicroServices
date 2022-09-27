@@ -27,8 +27,6 @@ namespace Api.Users.Controllers
         [Route("login")]
         public IActionResult Login(User user)
         {
-
-
             if (user.FirstName == "NODE")
             {
                 var claims = new[] {
