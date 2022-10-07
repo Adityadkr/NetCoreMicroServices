@@ -38,11 +38,12 @@
         }
       ],
       "UpstreamPathTemplate": "/product/getproducts",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "AuthKey",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET" ]
+      //,
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "AuthKey",
+      //  "AllowedScopes": []
+      //}
     }
   ],
   "GlobalConfiguration": {

@@ -24,8 +24,10 @@ namespace Api.Products
                     webBuilder.UseStartup<Startup>();
                 }).ConfigureAppConfiguration((hostingContext, config) =>
                 {
+                    config.AddJsonFile("appsettings.json");
+                    config.AddJsonFile(Path.GetFullPath(Path.Combine(@"Shared/SharedSettings." + hostingContext.HostingEnvironment.EnvironmentName + ".json")));
 
-                    config.AddJsonFile(Path.GetFullPath(Path.Combine(@"../" + "SharedSettings." + hostingContext.HostingEnvironment.EnvironmentName + ".json")));
+                    // config.AddJsonFile(Path.GetFullPath(Path.Combine(@"../" + "SharedSettings." + hostingContext.HostingEnvironment.EnvironmentName + ".json")));
                 });
     }
 }

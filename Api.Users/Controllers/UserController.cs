@@ -30,6 +30,7 @@ namespace Api.Users.Controllers
         [Route("login")]
         public IActionResult Login(User user)
         {
+            string ss = _configuration.GetValue<string>("Jwt:Key");
             if (user.FirstName == "NODE")
             {
                 var claims = new[] {
